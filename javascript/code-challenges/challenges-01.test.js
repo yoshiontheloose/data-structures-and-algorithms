@@ -1,4 +1,11 @@
 'use strict';
+
+// used with arrays
+// forEach is a method and it takes a callback function
+// The first parameter in a forEach is the element
+// Element is each string in the array
+// Does not return anything unless we tell it to
+
 // DELETE x's from bottom answers before running npm test 01
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,10 +75,20 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
+  word = word.toUpperCase() + '!';
+  return word;
 };
+// another way
+// 
 
 const speaker = (words, callback) => {
   // Solution code here...
+  let newSpeaker = [];
+  words.forEach(word => {
+    newSpeaker.push(callback(word));
+  });
+
+  return newSpeaker;
 };
 
 /* ------------------------------------------------------------------------------------------------

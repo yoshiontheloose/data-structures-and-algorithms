@@ -1,10 +1,10 @@
 'use strict';
 
-// used with arrays
-// forEach is a method and it takes a callback function
-// The first parameter in a forEach is the element
-// Element is each string in the array
-// Does not return anything unless we tell it to
+// NOTE: used with arrays
+// NOTE: forEach is a method and it takes a callback function
+// NOTE: The first parameter in a forEach is the element
+// NOTE: Element is each string in the array
+// NOTE: Does not return anything unless we tell it to
 
 // DELETE x's from bottom answers before running npm test 01
 
@@ -56,9 +56,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   // Solution code here...
   let newArray = [];
-  arr.forEach(i => {
-    newArray.push(i.toUpperCase());
-  });
+  arr.forEach(i => newArray.push(i.toUpperCase()));
 
   return newArray;
 };
@@ -73,20 +71,19 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
+// NOTE Q: What is a callback function?
+// NOTE A: A callback function is a function passed to another function or method as an argument
+
 const greeting = (word) => {
   // Solution code here...
   word = word.toUpperCase() + '!';
   return word;
 };
-// another way
-// 
 
 const speaker = (words, callback) => {
   // Solution code here...
   let newSpeaker = [];
-  words.forEach(word => {
-    newSpeaker.push(callback(word));
-  });
+  words.forEach(word => newSpeaker.push(callback(word)));
 
   return newSpeaker;
 };
@@ -94,7 +91,8 @@ const speaker = (words, callback) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
+Write a function named addValues that takes in an array and a value and pushes the value into the array.
+This function does not need a return statement.
 
 Then, write a function named addNumbers that takes in four arguments:
   - A number to be added to an array
@@ -109,10 +107,16 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i++){
+    callback(arr, num);
+  }
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,8 +137,21 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
+// NOTE: DOT NOTATION is objectReference.propertyName
+// NOTE: Dot Notation is used to access properties of an object
+// NOTE: item.available  item is an instance in the availableItems array (yes, the [i])
+
 const createList = (availableItems) => {
   // Solution code here...
+  let list = [];
+
+  availableItems.forEach(item => {
+    if (item.available){
+      list.push(item.name);
+    }
+  });
+
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,14 +207,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {

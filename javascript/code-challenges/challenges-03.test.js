@@ -26,6 +26,9 @@ uses filter to return an array containing only the numbers.
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
+// NOTE: typeof function, typeOf(7) - returns a string
+// NOTE: Number - capitalized, knows that value is a number
+
 const typeNum = (arr) => {
   // Solution code here...
   return arr.filter(arr => isNaN(arr) === false);
@@ -73,16 +76,22 @@ that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
+// notinfirstarray holds the two arrays
+// filter will return a new array of the second array (arr) elements not in first array
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  return 
+  return arr.filter(arr => forbiddenValues.includes(arr) === false);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
-Write a function named getBaseStatGreaterThan that, given the snorlaxData, below, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+Write a function named getBaseStatGreaterThan
+that, given the snorlaxData below,
+and an integer as input,
+uses filter to return an array
+containing all stats with a baseStat greater than the integer.
 
 For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 ------------------------------------------------------------------------------------------------ */
@@ -119,25 +128,35 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+// Solution code here..
+  return arr.filter(stat => stat.baseStat > minBaseStat);
 };
+
+// note: filter over each stat, if baseStat in the stat object is less than minimum base stat. returns filtered array containing the 'special defense' and 'special attack' objects.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 7. For this function, extend your solution from challenge 7 to only return the name of the stat, rather than the entire stat object.
+Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 6.
+For this function, extend your solution from challenge 7 to only return the name of the stat, rather than the entire stat object.
 
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(stat => stat.baseStat > minBaseStat).map(arr => arr.stat.name);
 };
+
+// note: could also call function created from previous solution:
+// note: const getStatName = (arr, minBaseStat) => getBaseStatGreaterThan(arr, minBaseStat).map(arr => arr.stat.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
+Write a function named getCharactersWithoutChildren that,
+given the array of characters, below,
+uses filter to return an array of all characters without children.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -185,18 +204,24 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  return arr.filter(arr => !arr.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
+Write a function named evenOddNumericValues that,
+given an array as input,
+uses filter to remove any non-numeric values,
+then uses map to generate a new array
+containing the string 'even' or 'odd', depending on the original value.
 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+  return arr.filter(arr => !arr.Number).map(arr => arr.includes('even', 'odd'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -267,7 +292,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -278,7 +303,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
@@ -299,14 +324,14 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);

@@ -70,6 +70,11 @@ const appendFirstToLast = (arr) => {
   arr.splice(arr.length, 0, newArray);
 };
 
+// arr.push(arr[0]);
+
+// pass by value is the array going in
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4

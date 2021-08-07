@@ -126,8 +126,9 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let re = /([A-Z])[a-z]./g;
-  return str.match(re);
+  let re = /([A-Z])[a-zA-Z]*/g;
+  let results = str.match(re);
+  return results || [];
 };
 
 // let re = /([A-Z][a-z].*)/g;
@@ -142,7 +143,15 @@ return a new array containing any cities that begin with the letters A through J
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let re = /[A-J]
+  let regex = /^[A-J]/;
+  let results = [];
+
+  arr.forEach(city => {
+    if (regex.test(city)) {
+      results.push(city);
+    }
+  });
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -21,8 +21,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { 
-  name: 'Code 301', 
+const courseInfo = {
+  name: 'Code 301',
   duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
@@ -30,20 +30,20 @@ const courseInfo = {
 
 const getCourseKeys = (obj) => {
   // Solution code here...
-  let myKeys = Object.keys(obj);
-  return myKeys;
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
+Write a function named checkValues that takes in an object and a value
+and returns true if the value is in the object.
 
 
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  return Object.values(obj).includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,11 +65,9 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
+const updateNumbers = (obj) => Object.keys(obj).map(key => `${key}: ${obj[key]}`)
 
-
+//NOTE: What is this called and when do we use it: ${}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -123,6 +121,10 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  Object.values(arr).forEach(person => {
+    
+  })
+
   return houses;
 };
 
@@ -140,7 +142,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let children = 0;
 
+  arr.forEach(person => {
+    if(person.name === character) {
+      Object.keys(person).forEach((key, index) => {
+        if (key === 'children') {
+
+          children = Object.values(person)[index].length;
+        }
+      }
+    }
+  });
+  return children ? true : false ;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -72,8 +72,7 @@ const forLoopTwoToThe = (arr) => {
   //arr is an array of integers
   for (let i = 0; i < );
 
-  let newArray = arr.map(i => i(Math.pow(i ^ 2, i)));
-  return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +93,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let newArray = arr.map(i => i(Math.pow(i ^ 2, i)));
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -18,7 +18,7 @@ return the last 10 characters from that string as elements of an array.
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-
+  
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,9 +102,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-  // for(let i = 0; i <= hoursOpen.length; i++) {
-  //   let
-  // }
+  const hourlySales = [];
+  for(let i in stores[0]) {
+    let hourlyTotal = 0;
+    for (let i in stores){
+      hourlyTotal += stores[0][0];
+    }
+    hourlySales.push();
+  }
+  return hourlySales;
 };
 
 
@@ -131,6 +137,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const salesOverview = [];
+
+  data.forEach(cookieTotal, i) => {
+    salesOverview.push({
+      sales: `${cookieTotal} cookies`,
+      time: hours[0]
+    })
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------

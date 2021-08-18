@@ -23,12 +23,10 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
-  let htmlList = [];
-  htmlList += obj.forEach(obj => `<li>${obj}</li>`).split(',');
-  return htmlList;
+  return Object.keys(obj).map(key => `<li>${key}: ${obj[key]}</li>`);
 }
 
-// NOTE TEST********
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -158,7 +156,7 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  return data.filter(char.gender === 'male' || char.gender === 'female').map(char => char.name).join(' and ');
+  return data.filter(char => char.gender === 'male' || char.gender === 'female').map(char => char.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------

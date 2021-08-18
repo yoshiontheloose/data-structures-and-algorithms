@@ -26,8 +26,6 @@ function transformToLis(obj) {
   return Object.keys(obj).map(key => `<li>${key}: ${obj[key]}</li>`);
 }
 
-
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 

@@ -12,11 +12,21 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
-  let newStr = 0;
-  arr.map((str, index) => {
-    if (str.length > stringIndex);
+  let longestStr = 0;
+  let longestStrLength = 0;
+  arr.forEach((str, idx) => {
+    if (str.length > longestStrLength) {
+      longestStrLength = str.length;
+      longestStr = idx;
+    }
   });
+  return longestStr;
 };
+
+// let newStr = 0;
+// arr.map((str, index) => {
+//   if (str.length > stringIndex);
+// });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2

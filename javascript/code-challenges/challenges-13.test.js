@@ -12,15 +12,12 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
-  let longestStr = 0;
-  let longestStrLength = 0;
+  let currentLongest = {longestString: -1, longestStrLength: 0};
+
   arr.forEach((str, idx) => {
-    if (str.length > longestStrLength) {
-      longestStrLength = str.length;
-      longestStr = idx;
-    }
+    (str.length > currentLongest.longestStrLength) ? currentLongest = { longestString: idx, longestStrLength: str.length } : '';
   });
-  return longestStr;
+  return currentLongest.longestString;
 };
 
 // let newStr = 0;

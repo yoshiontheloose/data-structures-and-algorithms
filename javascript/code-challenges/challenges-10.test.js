@@ -18,7 +18,7 @@ return the last 10 characters from that string as elements of an array.
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-  
+  return str.slice(-10).split('');
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,15 +105,13 @@ const grandTotal = (stores) => {
   const hourlySales = [];
   for(let i in stores[0]) {
     let hourlyTotal = 0;
-    for (let i in stores){
-      hourlyTotal += stores[0][0];
+    for (let j in stores){
+      hourlyTotal += stores[j][i];
     }
-    hourlySales.push();
+    hourlySales.push(hourlyTotal);
   }
   return hourlySales;
 };
-
-
 
 // let cookieSales = [];
 // stores.map(hoursOpen => {
@@ -126,8 +124,6 @@ const grandTotal = (stores) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-TAKE OFF x
-
 Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour and the time.
 
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
@@ -139,18 +135,17 @@ const salesData = (hours, data) => {
   // Solution code here...
   const salesOverview = [];
 
-  data.forEach(cookieTotal, i) => {
+  data.forEach((cookieTotal, i) => {
     salesOverview.push({
       sales: `${cookieTotal} cookies`,
-      time: hours[0]
-    })
-  }
+      time: hours[i],
+    });
+  });
+  return salesOverview;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
-TAKE OFF x
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
@@ -172,6 +167,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -302,7 +298,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
@@ -323,7 +319,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });

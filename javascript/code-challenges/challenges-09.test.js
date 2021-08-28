@@ -9,12 +9,10 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-    // return arr.reduce(max, min) => {
-    //   max.push();
-    // };
-
-
+  return arr.reduce((acc, num) => acc > num ? acc : num);
 };
+
+// acc is the bucket
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2

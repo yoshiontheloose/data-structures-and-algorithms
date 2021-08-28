@@ -78,6 +78,8 @@ const countNumberOfElements = (arr) => {
   return totalElements;
 };
 
+// return arr.reduce(acc => acc + 1, 0);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -139,11 +141,10 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  let characterName = arr.reduce((acc, character) => {
-    acc[character.name] = character.name;
+  return arr.reduce((acc, character) => {
+    acc.push(character.name);
     return acc;
   }, []);
-  return characterName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,7 +158,11 @@ Note: hint spread operator, breaking down string
 
 const reversedString = (str) => {
   // Solution code here...
+  let string = str.split('');
+  return string.reduce((a,b) => b + a, '');
 };
+
+// return str.split('').reduce((acc, char) => acc + char, '');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -350,7 +355,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the string with the characters in reverse order', () => {
     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
   });

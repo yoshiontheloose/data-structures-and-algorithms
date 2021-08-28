@@ -12,6 +12,8 @@ const maxInArray = (arr) => {
     // return arr.reduce(max, min) => {
     //   max.push();
     // };
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +67,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => Object.keys(obj).map(key => `${key}: ${obj[key]}`)
+const updateNumbers = (obj) => Object.keys(obj).map(key => `${key}: ${obj[key]}`);
 
 //NOTE: What is this called and when do we use it: ${}
 
@@ -122,8 +124,8 @@ const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
   Object.values(arr).forEach(person => {
-    
-  })
+    houses.push(person.house);
+  });
 
   return houses;
 };
@@ -151,7 +153,7 @@ const hasChildrenValues = (arr, character) => {
 
           children = Object.values(person)[index].length;
         }
-      }
+      });
     }
   });
   return children ? true : false ;

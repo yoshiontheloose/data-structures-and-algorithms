@@ -16,7 +16,7 @@ Write a second function that removes an element from the middle index and shifts
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 
-![array-insert-shift](/code_challenges/array-insert-shift/array-insert-shift.png)
+![array-insert-shift](/array-insert-shift/array-insert-shift.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->

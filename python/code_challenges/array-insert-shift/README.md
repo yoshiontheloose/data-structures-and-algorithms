@@ -9,14 +9,14 @@ Input | Output
 [2,4,6,-8], 5 | [2,4,5,6,-8]
 [42,8,15,23,42], 16 | [42,8,15,16,23,42]
 
-**Stretch Goal**
+**Stretch Goal**:
 
 Write a second function that removes an element from the middle index and shifts other elements in the array to fill the new gap.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 
-![array-insert-shift](/array-insert-shift/array-insert-shift.png)
+![array-insert-shift](../array-insert-shift/array-insert-shift.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->

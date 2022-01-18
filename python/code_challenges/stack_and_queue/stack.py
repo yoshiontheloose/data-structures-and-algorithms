@@ -12,12 +12,17 @@ class Stack:
 # Arguments: value
 # adds a new node with that value to the top of the stack with an O(1) Time performance.
     def push(self, value):
-        node = Node(value)
-        
+        new_node = Node(value)
+        if self.top:
+            self.top.next = new_node
+            self.top = new_node
+        else:
+            self.top = new_node
 
 
-
-
+3
+2 next
+1
 
 
 

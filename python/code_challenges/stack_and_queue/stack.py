@@ -35,8 +35,6 @@ class Stack:
             self.top = new_node
 
 
-
-
 # pop
 # Arguments: none
 # Returns: the value from node from the top of the stack

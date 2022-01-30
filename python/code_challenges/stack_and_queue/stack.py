@@ -1,7 +1,7 @@
 # from node import Node
 
 class Node:
-    def __init__(self, value, next= None):
+    def __init__(self, value, next=None):
         self.value = value
         self.next = next
 
@@ -9,7 +9,7 @@ class Node:
 # It creates an empty Stack when instantiated.
 # This object should be aware of a default empty value assigned to top when the stack is created.
 class Stack:
-    def __init__(self, top= None):
+    def __init__(self, top=None):
         self.top = top
 
 # The class should contain the following methods:
@@ -33,26 +33,22 @@ class Stack:
 # Assign Node to the Top
             self.top = new_node
 
-
-
-
 # pop
 # Arguments: none
-# Returns: the value from node from the top of the stack
 # Removes the node from the top of the stack
+# Returns: the value from node from the top of the stack
 # Should raise exception when called on empty stack
 
     def pop(self):
-        # check if stack is empty
-        if self.top is None:
-    # raise exception
-            raise Exception("Stack is empty")
-# assign current_top to return_value
-        return_value = self.top
+        if self.is_empty() is False:
+            new_top = self.top
 # reassign top of stack to the current top's next value
-        self.top = return_value.next
-# return the return_value
-        return return_value
+            self.top = new_top.next
+            return new_top.value
+        else:
+# raise exception
+            raise Exception("Stack is empty")
+
 
 
 # peek

@@ -38,10 +38,17 @@ def test_stack_pop():
 
 
 # Can successfully empty a stack after multiple pops
-@pytest.mark.skip('Pending')
+# @pytest.mark.skip('Pending')
 def test_stack_empty_multi_pop():
-    pass
-
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    assert stack.is_empty() == False
+    stack.pop()
+    with pytest.raises(Exception):
+        stack.pop()
+    assert stack.is_empty() == True
 
 # Can successfully peek the next item on the stack
 @pytest.mark.skip('Pending')

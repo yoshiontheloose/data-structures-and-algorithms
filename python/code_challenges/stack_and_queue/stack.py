@@ -1,9 +1,10 @@
-# from node import Node
+from code_challenges.stack_and_queue.node import Node
 
-class Node:
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
+# class Node:
+#     def __init__(self, value, next= None):
+#         self.value = value
+#         self.next = next
+
 
 # Create a Stack class that has a top property.
 # It creates an empty Stack when instantiated.
@@ -19,8 +20,8 @@ class Stack:
 
 
 # make a push function that takes a value
-    def push(self, value):
 #  create a node with a value (creating a variable for a node instance)
+    def push(self, value):
         new_node = Node(value)
 # Check stack for a Top
 # if true
@@ -48,8 +49,6 @@ class Stack:
         else:
 # raise exception
             raise Exception("Stack is empty")
-
-
 
 # peek
 # Arguments: none

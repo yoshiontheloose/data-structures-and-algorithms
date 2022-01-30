@@ -1,9 +1,9 @@
-# from node import Node
+from code_challenges.stack_and_queue.node import Node
 
-class Node:
-    def __init__(self, value, next= None):
-        self.value = value
-        self.next = next
+# class Node:
+#     def __init__(self, value, next= None):
+#         self.value = value
+#         self.next = next
 
 
 # First In First Out | Last In Last Out

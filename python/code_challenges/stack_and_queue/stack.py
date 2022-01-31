@@ -5,7 +5,6 @@ from code_challenges.stack_and_queue.node import Node
 #         self.value = value
 #         self.next = next
 
-
 # Create a Stack class that has a top property.
 # It creates an empty Stack when instantiated.
 # This object should be aware of a default empty value assigned to top when the stack is created.
@@ -13,26 +12,15 @@ class Stack:
     def __init__(self, top=None):
         self.top = top
 
-# The class should contain the following methods:
 # push
 # Arguments: value
 # adds a new node with that value to the top of the stack with an O(1) Time performance.
 
-
-# make a push function that takes a value
-#  create a node with a value (creating a variable for a node instance)
     def push(self, value):
         new_node = Node(value)
-# Check stack for a Top
-# if true
-        if self.top is True:
-#  Add new node as the next top
+        if self.top:
             new_node.next = self.top
-# Assign Node to the Top
-            self.top = new_node
-        else:
-# Assign Node to the Top
-            self.top = new_node
+        self.top = new_node
 
 # pop
 # Arguments: none
@@ -43,11 +31,9 @@ class Stack:
     def pop(self):
         if self.is_empty() is False:
             new_top = self.top
-# reassign top of stack to the current top's next value
             self.top = new_top.next
             return new_top.value
         else:
-# raise exception
             raise Exception("Stack is empty")
 
 # peek
@@ -55,18 +41,11 @@ class Stack:
 # Should raise exception when called on empty stack
 # Returns: Value of the node located at the top of the stack
 
-# Algorithm:
-# make a peek function
-# check if the stack is empty
-# raise exception if stack is empty
-# if not empty, return value of the top node
-
     def peek(self):
         if self.top is None:
             raise Exception("Stack is empty")
         else:
             return self.top.value
-
 
 # is empty
 # Arguments: none

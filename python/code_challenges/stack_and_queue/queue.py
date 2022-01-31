@@ -5,7 +5,6 @@ from code_challenges.stack_and_queue.node import Node
 #         self.value = value
 #         self.next = next
 
-
 # First In First Out | Last In Last Out
 
 # Create a Queue class that has a front property. It creates an empty Queue when instantiated.
@@ -25,9 +24,12 @@ class Queue:
 
     def enqueue(self, value):
         new_node = Node(value)
-        if new_node is True:
-            new_node = self.rear
-
+        if self.front is None:
+            self.front = new_node
+            self.rear = self.front
+        else:
+            self.rear.next = new_node
+            self.rear = new_node
 
 # dequeue
 # Arguments: none
@@ -39,9 +41,9 @@ class Queue:
         if self.is_empty():
             raise Exception("Queue is empty")
         else:
-            self.next = self.front
-        return self.front.value
-
+            head = self.front
+            self.front = self.front.next
+        return head.value
 
 # peek
 # Arguments: none

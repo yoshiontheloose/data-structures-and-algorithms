@@ -93,3 +93,7 @@ is empty -
 
 - Arguments: none
 - Returns: Boolean indicating whether or not the queue is empty
+
+## Credit and Collaboration
+
+[Source](https://medium.com/@Emmanuel.A/data-structure-queue-python-9e5439d2ceea)

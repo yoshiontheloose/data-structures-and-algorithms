@@ -43,7 +43,7 @@ Big O: Space - O(1) Time - O(1)
 
 ### Whiteboard
 
-![challenge10](/code_challenges/stack_and_queue/codechallenge10.png)
+![challenge10](/code_challenges/stack_and_queue/whiteboard10.png)
 
 ## API
 <!-- Description of each method publicly available to your Stack and Queue-->

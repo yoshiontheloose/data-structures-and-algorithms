@@ -39,6 +39,11 @@ Ensure your tests are passing
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
+### Whiteboard
+
+![Whiteboard](/code_challenges/stack_and_queue/codechallenge10.png)
+
+
 Big O: Space - O(1) Time - O(1)
 
 ## API

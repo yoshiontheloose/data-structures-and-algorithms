@@ -72,3 +72,24 @@ Find the maximum value stored in the tree. You can assume that the values stored
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
+
+-----
+
+# Tree Breadth First
+<!-- Description of the challenge -->
+Write a function called `breadth first` with an argument of `tree`
+Return a list of all values in the tree, in the order they were encountered
+
+Write Unit tests
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+![breadth](/code_challenges/trees/breadth.jpg)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O: Space and Time O(n)
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->

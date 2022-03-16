@@ -1,9 +1,5 @@
+from code_challenges.linked_list.linked_list import LinkedList
 
-
-class Node:
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
 
 class Hashtable:
 
@@ -14,7 +10,15 @@ class Hashtable:
 #-----------------------------------------------------------------
 
     def add(self, key, value):
-        pass
+        hashed_key = self.hash(key)
+        if not self.bucket[hashed_key]:     # is there something at that index
+            self.bucket[hashed_key] = LinkedList()      # create new linked list at the hashed key
+        current = self.bucket[hashed_key].head      # check the key and replace if it exists
+        while current:
+            if current.value[0] == key:
+                current.value[1] == value
+            current = current.next
+        self.bucket[hashed_key].append([key, value])       #
 
 
 # add/set
